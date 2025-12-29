@@ -1,0 +1,21 @@
+
+{% extends "layouts/base.html" %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+<h2>Categories</h2>
+
+<form method="post">
+  <input type="hidden" name="_csrf" value="{{ csrf }}">
+  <input name="name" placeholder="Name">
+  <button type="submit">Add</button>
+</form>
+
+<ul>
+{% for c in Categories %}
+<li>{{ c.Name }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
