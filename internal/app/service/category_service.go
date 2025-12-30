@@ -5,7 +5,7 @@ import (
 
 	dto "go-pongo2-demo/internal/app/http/requests"
 	"go-pongo2-demo/internal/app/models"
-	"go-pongo2-demo/internal/app/repo"
+	repo "go-pongo2-demo/internal/app/repository"
 
 	"github.com/go-playground/validator/v10"
 )

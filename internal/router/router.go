@@ -8,13 +8,11 @@ import (
 	echomw "github.com/labstack/echo/v4/middleware"
 )
 
-func Setup(e *echo.Echo) {
+func Setup(e *echo.Echo, deps *bootstrap.Container) {
 	e.Use(echomw.Logger())
 	e.Use(echomw.Recover())
 	e.Use(middleware.Session())
 	e.Use(middleware.CSRF())
-
-	deps := bootstrap.Init()
 
 	e.GET("/", deps.AuthController.RedirectHome)
 	e.GET("/login", deps.AuthController.LoginForm)
