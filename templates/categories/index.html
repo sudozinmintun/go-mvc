@@ -1,4 +1,3 @@
-
 {% extends "layouts/base.html" %}
 
 {% block title %}Categories{% endblock %}
@@ -8,14 +7,21 @@
 
 <form method="post">
   <input type="hidden" name="_csrf" value="{{ csrf }}">
-  <input name="name" placeholder="Name">
+
+  <input name="name" placeholder="Name" value="{{ Form.Name }}">
+
+  {% if Errors.name %}
+  <div style="color:red">{{ Errors.name }}</div>
+  {% endif %}
+
   <button type="submit">Add</button>
 </form>
 
+
 <ul>
-{% for c in Categories %}
-<li>{{ c.Name }}</li>
-{% endfor %}
+  {% for c in Categories %}
+  <li>{{ c.Name }}</li>
+  {% endfor %}
 </ul>
 
 {% endblock %}

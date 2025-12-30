@@ -1,8 +1,8 @@
 package controllers
 
 import (
+	"go-pongo2-demo/internal/app/models"
 	"go-pongo2-demo/internal/database"
-	"go-pongo2-demo/internal/models"
 	"net/http"
 
 	"github.com/labstack/echo-contrib/session"
