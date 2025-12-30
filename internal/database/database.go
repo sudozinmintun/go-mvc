@@ -2,7 +2,8 @@ package database
 
 import (
 	"fmt"
-	"go-pongo2-demo/internal/config"
+	"pmsys/internal/app/models"
+	"pmsys/internal/config"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -25,9 +26,9 @@ func ConnectAndMigrate() (*gorm.DB, error) {
 		return nil, err
 	}
 
-	// if err := db.AutoMigrate(&models.User{}, &models.Category{}); err != nil {
-	// 	return nil, err
-	// }
+	if err := db.AutoMigrate(&models.User{}, &models.Category{}); err != nil {
+		return nil, err
+	}
 
 	DB = db
 	return db, nil

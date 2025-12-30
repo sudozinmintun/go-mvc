@@ -1,8 +1,8 @@
 package router
 
 import (
-	"go-pongo2-demo/internal/app/http/middleware"
-	"go-pongo2-demo/internal/bootstrap"
+	"pmsys/internal/app/http/middleware"
+	"pmsys/internal/bootstrap"
 
 	"github.com/labstack/echo/v4"
 	echomw "github.com/labstack/echo/v4/middleware"
@@ -15,6 +15,9 @@ func Setup(e *echo.Echo, deps *bootstrap.Container) {
 	e.Use(middleware.CSRF())
 
 	e.GET("/", deps.AuthController.RedirectHome)
+	e.GET("/register", deps.AuthController.RegisterForm)
+	e.POST("/register", deps.AuthController.RegisterProcess)
+
 	e.GET("/login", deps.AuthController.LoginForm)
 	e.POST("/login", deps.AuthController.Login)
 

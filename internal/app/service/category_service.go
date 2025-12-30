@@ -3,9 +3,9 @@ package service
 import (
 	"errors"
 
-	dto "go-pongo2-demo/internal/app/http/dto"
-	"go-pongo2-demo/internal/app/models"
-	repo "go-pongo2-demo/internal/app/repository"
+	dto "pmsys/internal/app/http/dto"
+	"pmsys/internal/app/models"
+	repo "pmsys/internal/app/repository"
 
 	"github.com/go-playground/validator/v10"
 )

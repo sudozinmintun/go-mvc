@@ -5,11 +5,11 @@ import (
 
 	"github.com/labstack/echo/v4"
 
-	"go-pongo2-demo/internal/bootstrap"
-	"go-pongo2-demo/internal/config"
-	"go-pongo2-demo/internal/database"
-	"go-pongo2-demo/internal/router"
-	"go-pongo2-demo/internal/view"
+	"pmsys/internal/bootstrap"
+	"pmsys/internal/config"
+	"pmsys/internal/database"
+	"pmsys/internal/router"
+	"pmsys/internal/view"
 )
 
 func main() {

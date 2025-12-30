@@ -1,7 +1,7 @@
-package repo
+package repository
 
 import (
-	"go-pongo2-demo/internal/app/models"
+	"pmsys/internal/app/models"
 
 	"gorm.io/gorm"
 )

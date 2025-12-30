@@ -1,4 +1,4 @@
-module go-pongo2-demo
+module pmsys
 
 go 1.24.0
 

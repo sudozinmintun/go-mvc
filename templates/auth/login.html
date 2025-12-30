@@ -9,7 +9,7 @@
 {% if error %}<div>{{ error }}</div>{% endif %}
 
 <form method="post">
-  <input type="hidden" name="_csrf" value="{{ csrf }}">
+  <input type="hidden" name="_csrf" value="{{ _csrf }}">
   <input name="email" placeholder="Email"><br>
   <input type="password" name="password" placeholder="Password"><br>
   <button type="submit">Login</button>

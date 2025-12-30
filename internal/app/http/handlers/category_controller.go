@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	dto "go-pongo2-demo/internal/app/http/dto"
-	"go-pongo2-demo/internal/app/models"
-	"go-pongo2-demo/internal/app/service"
-	"go-pongo2-demo/internal/database"
 	"net/http"
+	dto "pmsys/internal/app/http/dto"
+	"pmsys/internal/app/models"
+	"pmsys/internal/app/service"
+	"pmsys/internal/database"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"

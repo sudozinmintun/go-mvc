@@ -9,6 +9,14 @@ import (
 	echomw "github.com/labstack/echo/v4/middleware"
 )
 
+func CSRF() echo.MiddlewareFunc {
+	return echomw.CSRFWithConfig(echomw.CSRFConfig{
+		CookieName:  "csrf",
+		CookiePath:  "/",
+		TokenLookup: "form:_csrf,header:X-CSRF-Token",
+	})
+}
+
 func Session() echo.MiddlewareFunc {
 	store := sessions.NewCookieStore([]byte("secret123"))
 	store.Options = &sessions.Options{
@@ -17,14 +25,6 @@ func Session() echo.MiddlewareFunc {
 		SameSite: http.SameSiteLaxMode,
 	}
 	return session.Middleware(store)
-}
-
-func CSRF() echo.MiddlewareFunc {
-	return echomw.CSRFWithConfig(echomw.CSRFConfig{
-		CookieName:  "csrf",
-		CookiePath:  "/",
-		TokenLookup: "form:_csrf,header:X-CSRF-Token",
-	})
 }
 
 func RequireAuth(next echo.HandlerFunc) echo.HandlerFunc {
