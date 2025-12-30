@@ -3,7 +3,7 @@ package service
 import (
 	"errors"
 
-	dto "go-pongo2-demo/internal/app/http/requests"
+	dto "go-pongo2-demo/internal/app/http/dto"
 	"go-pongo2-demo/internal/app/models"
 	repo "go-pongo2-demo/internal/app/repository"
 

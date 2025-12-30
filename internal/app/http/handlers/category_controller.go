@@ -1,7 +1,7 @@
-package controllers
+package handlers
 
 import (
-	dto "go-pongo2-demo/internal/app/http/requests"
+	dto "go-pongo2-demo/internal/app/http/dto"
 	"go-pongo2-demo/internal/app/models"
 	"go-pongo2-demo/internal/app/service"
 	"go-pongo2-demo/internal/database"

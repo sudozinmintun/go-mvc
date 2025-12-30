@@ -1,7 +1,7 @@
 package bootstrap
 
 import (
-	"go-pongo2-demo/internal/app/http/controllers"
+	"go-pongo2-demo/internal/app/http/handlers"
 	repo "go-pongo2-demo/internal/app/repository"
 	"go-pongo2-demo/internal/app/service"
 
@@ -9,8 +9,8 @@ import (
 )
 
 type Container struct {
-	CategoryController controllers.CategoryController
-	AuthController     controllers.AuthController
+	CategoryController handlers.CategoryController
+	AuthController     handlers.AuthController
 }
 
 func Init(db *gorm.DB) *Container {
@@ -21,8 +21,8 @@ func Init(db *gorm.DB) *Container {
 	categoryService := service.NewCategoryService(categoryRepo)
 
 	// controllers
-	categoryController := controllers.NewCategoryController(categoryService)
-	authController := controllers.AuthController{}
+	categoryController := handlers.NewCategoryController(categoryService)
+	authController := handlers.AuthController{}
 
 	return &Container{
 		CategoryController: categoryController,

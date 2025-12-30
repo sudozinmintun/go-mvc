@@ -1,4 +1,4 @@
-package controllers
+package handlers
 
 import (
 	"go-pongo2-demo/internal/app/models"
